@@ -1,12 +1,12 @@
 import './App.css';
 import { useSelector, useDispatch } from 'react-redux'
-import { increaseCounter, decreaseCounter } from './redux/counter/actions'
+import { increment, decrement } from './redux-toolkit/counter/counterSlice'
 
 const App = () => {
   const dipsatch = useDispatch();
-  const counter = useSelector(c => c.counter.count);
-  const onIncreaseClick = () => dipsatch(increaseCounter());
-  const onDecreaseClick = () => dipsatch(decreaseCounter());
+  const counter = useSelector(c => c.counter.value);
+  const onIncreaseClick = () => dipsatch(increment());
+  const onDecreaseClick = () => dipsatch(decrement());
 
   return (
     <div className='App'>
